@@ -7,5 +7,5 @@
 	<!--		</Page>-->
 	<!--	</pages>-->
 	<!--</App>-->
-	<Text text="Hello World"/>
+	<Button text="Say Hello" press="onPressHello"/>
 </mvc:View>
