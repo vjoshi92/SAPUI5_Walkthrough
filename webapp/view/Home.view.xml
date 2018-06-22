@@ -8,4 +8,8 @@
 	<!--	</pages>-->
 	<!--</App>-->
 	<Button text="Say Hello" press="onPressHello"/>
+	<Input value="{/recipient/name}"
+		   description="Hello {/recipient/name}"
+		   valueLiveUpdate="true"
+		   width="60%"/>
 </mvc:View>
