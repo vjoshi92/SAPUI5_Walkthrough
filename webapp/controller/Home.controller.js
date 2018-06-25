@@ -16,14 +16,19 @@ sap.ui.define([
 		
 		onOpenDialog:function(){
 			var oView = this.getView();
-			var oDialog= oView.byId("HelloDialog");
+			var oDialog= oView.byId("helloDialog");
 			
 			if(!oDialog){
-				oDialog=sap.ui.xmlfragment(oView.getId(),"com.synconic.practice.SAPUI5_Walkthorugh.view.HelloDialog");
+				oDialog=sap.ui.xmlfragment(oView.getId(),"com.synconic.practice.SAPUI5_Walkthorugh.view.HelloDialog",this);
 				oView.addDependent(oDialog);
 			}
 			
 			oDialog.open();
+		},
+		
+		onCloseDialog:function(){
+			this.getView().byId("helloDialog").close();
 		}
+		
 	});
 });
