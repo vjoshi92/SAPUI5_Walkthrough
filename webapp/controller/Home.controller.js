@@ -12,6 +12,18 @@ sap.ui.define([
 			var sMSg = oBundle.getText("helloMsg",[sRecipient]);
 			
 			MessageToast.show(sMSg);
+		},
+		
+		onOpenDialog:function(){
+			var oView = this.getView();
+			var oDialog= oView.byId("HelloDialog");
+			
+			if(!oDialog){
+				oDialog=sap.ui.xmlfragment(oView.getId(),"com.synconic.practice.SAPUI5_Walkthorugh.view.HelloDialog");
+				oView.addDependent(oDialog);
+			}
+			
+			oDialog.open();
 		}
 	});
 });
