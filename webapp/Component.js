@@ -10,13 +10,7 @@ sap.ui.define([
 	return UIComponent.extend("com.synconic.practice.SAPUI5_Walkthorugh.Component", {
 
 		metadata: {
-			//manifest: "json"
-			rootView:{
-				"viewName": "com.synconic.practice.SAPUI5_Walkthorugh.view.Home",
-				"type": "XML",
-				"async": true,
-				"id": "app"
-			}
+			manifest: "json"
 		},
 
 		/**
@@ -36,10 +30,6 @@ sap.ui.define([
 			var oModel = new JSONModel(oData);
 			this.setModel(oModel);
 			
-			var i18nModel = new ResourceModel({
-				bundleName: "com.synconic.practice.SAPUI5_Walkthorugh.i18n.i18n"
-			});
-			this.setModel(i18nModel,"i18n");
 			// // enable routing
 			// this.getRouter().initialize();
 
