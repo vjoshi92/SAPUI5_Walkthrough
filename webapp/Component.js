@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/Device",
 	"com/synconic/practice/SAPUI5_Walkthorugh/model/models",
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/model/resource/ResourceModel"
-], function(UIComponent, Device, models,JSONModel,ResourceModel) {
+	"sap/ui/model/resource/ResourceModel",
+	"com/synconic/practice/SAPUI5_Walkthorugh/controller/HelloDialog"
+], function(UIComponent, Device, models,JSONModel,ResourceModel,HelloDialog) {
 	"use strict";
 
 	return UIComponent.extend("com.synconic.practice.SAPUI5_Walkthorugh.Component", {
@@ -30,11 +31,22 @@ sap.ui.define([
 			var oModel = new JSONModel(oData);
 			this.setModel(oModel);
 			
+			// set dialog
+			this._helloDialog = new HelloDialog(this.getRootControl());
 			// // enable routing
 			// this.getRouter().initialize();
 
 			// // set the device model
 			// this.setModel(models.createDeviceModel(), "device");
+		},
+		
+		exit : function(){
+			this._helloDialog.destroy();	
+		},
+		
+		openHelloDialog : function(){
+			this._helloDialog.open();
 		}
+		
 	});
 });
